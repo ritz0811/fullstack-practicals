@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical14</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            background-color: gray;
+        }
+        body h1
+        {
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 100px;
+        }
+        body .box
+        {
+            display: block;
+            margin: auto;
+            width: fit-content;
+        }
+        body .button
+        {
+            padding:5px 10px;
+            background-color: yellow;
+        }
+        body .button
+        {
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        body span
+        {
+            margin: 15px;
+        }
+        body #number
+        {
+            color: yellow;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>counter</h1>
+    <div class="box">
+    <span><a href="#" onclick="decrease()" class="button">-</a></span>
+    <span id="number">0</span>
+    <span><a href="#" onclick="increase()" class="button">+</a></span>
+</div>
+</body>
+<script>
+   var value = 0;
+   function increase(){
+       value++;
+       document.getElementById("number").innerHTML = value;
+
+   }
+   function decrease(){
+       value--;
+       document.getElementById("number").innerHTML = value;
+   }
+</script>
+</html>
