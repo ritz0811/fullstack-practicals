@@ -1,0 +1,52 @@
+* {margin: 0; padding: 0;box-sizing: border-box;}
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+table
+{
+    border:2px solid #2a3e49;
+    padding: 0;
+    width: 100%;
+    border-radius: 10px;
+}
+thead tr
+{
+    background-color:#2a3e49;
+    border-radius: 10px;
+}
+th,td
+{
+    text-align: left;
+    padding: 10px;
+}
+th
+{
+    border-bottom: 3px solid lightgray;
+}
+td
+{
+    border-bottom: 1px solid lightgray ;
+}
+span
+{
+    color: green;
+}
+table tr td .fa
+{
+    color: gray;
+    font-size: 30px;
+    margin-right: 20px;
+}
+table tr td .fa:hover
+{
+    color: blue;
+}
+table tr td a
+{
+    text-decoration: none;
+    color: gray;
+}
