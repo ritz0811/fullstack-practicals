@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-15</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            background-color: indigo;
+        }
+        .form
+        {
+            width: 35%;
+            background-color: white;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .heading
+        {
+            padding: 10px;
+            background-color: rgb(240, 240, 240);
+            border-radius: 5px 5px 0px 0px;
+            text-align: center;
+        }
+        .inputsection
+        {
+            padding: 10px 50px;
+        }
+        .inputsection p
+        {
+            color: rgb(39, 39, 39);
+            margin-bottom: 5px;
+        }
+        .inputbox
+        {
+            display: inline-flex;
+            width: 100%;
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .inputbox input
+        {
+            width: 100%;
+            border: 0px;
+            padding: 5px;
+        }
+        .inputbox input:focus
+        {
+            outline: none;
+        }
+        .inputbox .fa
+        {
+            opacity: 0;
+            color: green;
+            margin-right: 2px;
+        }
+        .inputsection .warning
+        {
+            opacity: 0;
+            font-size: 15px;
+            color: red;
+            margin-top: 2px;
+        }
+        .submit
+        {
+            padding: 10px 50px 20px;
+            width: 100%;
+        }
+        .submit button
+        {
+            width: 100%;
+            background-color: indigo;
+            padding: 10px;
+            border:0px;
+            border-radius: 5px;
+            color: white;
+        }
+        .submit button:hover
+        {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <div class="heading">
+            <h1>Create Account</h1>
+        </div>
+        <div class="inputsection">
+            <p>Username</p>
+            <div class="inputbox box1">
+                <input type="text" placeholder="Enter Username" class="username">
+                <i class="fa fa-check-circle fa1"></i>
+            </div>
+            <p class="warning warning1">Username can not be blank</p>
+        </div>
+        <div class="inputsection">
+            <p>Email</p>
+            <div class="inputbox box2">
+                <input type="text" placeholder="Enter Email" class="email">
+                <i class="fa fa-check-circle fa2"></i>
+            </div>
+            <p class="warning warning2">Email-ID can not be blank</p>
+        </div>
+        <div class="inputsection">
+            <p>Password</p>
+            <div class="inputbox box3">
+                <input type="text" placeholder="Enter Password" class="password1">
+                <i class="fa fa-check-circle fa3"></i>
+            </div>
+            <p class="warning warning3">Password1 can not be blank</p>
+        </div>
+        <div class="inputsection">
+            <p>Password Again</p>
+            <div class="inputbox box4">
+                <input type="text" placeholder="Enter Password Again" class="password2">
+                <i class="fa fa-check-circle fa4"></i>
+            </div>
+            <p class="warning warning4">Password2 can not be blank</p>
+        </div>
+        <div class="submit">
+            <button onclick="myfunction()">Submit</button>
+        </div>
+    </div>
+</body>
+<script>
+    var usrname = document.querySelector(".username");
+    var email = document.querySelector(".email");
+    var password1 = document.querySelector(".password1");
+    var password2 = document.querySelector(".password2");
+    var box2 = document.querySelector(".box2");
+    var fa1 = document.querySelector(".fa1");
+    var fa2 = document.querySelector(".fa2");
+    var fa3 = document.querySelector(".fa3");
+    var fa4 = document.querySelector(".fa4");
+    function myfunction()
+    {
+        if(usrname.value == "")
+        {
+            document.querySelector(".warning1").style.opacity = "1";
+            document.querySelector(".box1").style.border = "2px solid red";
+            fa1.style.opacity = "1";
+            fa1.style.color = "red";
+            fa1.setAttribute("class","fa fa-exclamation-circle");
+        }
+        else
+        {
+            document.querySelector(".warning1").style.opacity = "0";
+            document.querySelector(".box1").style.border = "2px solid green";
+            fa1.style.opacity = "1";
+            fa1.style.color = "green";
+            fa1.setAttribute("class","fa fa-check-circle");
+        }
+        if(validateEmail(email.value))
+        {
+            document.querySelector(".warning2").style.opacity = "0";
+            document.querySelector(".box2").style.border = "2px solid green";
+            fa2.style.opacity = "1";
+            fa2.style.color = "green";
+            fa2.setAttribute("class","fa fa-check-circle");
+        }
+        else
+        {
+            document.querySelector(".warning2").style.opacity = "1";
+            document.querySelector(".box2").style.border = "2px solid red";
+            fa2.style.opacity = "1";
+            fa2.style.color = "red";
+            fa2.setAttribute("class","fa fa-exclamation-circle");
+        }
+        if(password1.value == "")
+        {
+            document.querySelector(".warning3").style.opacity = "1";
+            document.querySelector(".box3").style.border = "2px solid red";
+            fa3.style.opacity = "1";
+            fa3.style.color = "red";
+            fa3.setAttribute("class","fa fa-exclamation-circle");
+        }
+        else
+        {
+            document.querySelector(".warning3").style.opacity = "0";
+            document.querySelector(".box3").style.border = "2px solid green";
+            fa3.style.opacity = "1";
+            fa3.style.color = "green";
+            fa3.setAttribute("class","fa fa-check-circle");
+        }
+        if(password2.value == "")
+        {
+            document.querySelector(".warning4").style.opacity = "1";
+            document.querySelector(".box4").style.border = "2px solid red";
+            fa4.style.opacity = "1";
+            fa4.style.color = "red";
+            fa4.setAttribute("class","fa fa-exclamation-circle");
+        }
+        else
+        {
+            document.querySelector(".warning4").style.opacity = "0";
+            document.querySelector(".box4").style.border = "2px solid green";
+            fa4.style.opacity = "1";
+            fa4.style.color = "green";
+            fa4.setAttribute("class","fa fa-check-circle");
+        }
+        function validateEmail(email) 
+        {
+            const re =
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+    }
+</script>
+</html>
